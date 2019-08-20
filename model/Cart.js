@@ -1,5 +1,6 @@
 ﻿var db = require('../dbconnection');
 var Cart = {
+
     getAllCarts: function (callback) {
         return db.query("SELECT * FROM Cart", callback);
     },

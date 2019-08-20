@@ -34,12 +34,22 @@
     <Content Include="model\Cart.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="model\Cart_Operation.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="model\Item.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="routes\cart.js" />
-    <Content Include="routes\index.js" />
-    <Content Include="routes\users.js" />
     <Content Include="package.json" />
     <Content Include="public\stylesheets\main.css" />
     <Content Include="README.md" />
+    <Content Include="routes\cartop.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="routes\item.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="views\index.pug" />
     <Content Include="views\layout.pug" />
     <Content Include="views\error.pug" />
