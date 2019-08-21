@@ -35,10 +35,19 @@ router.delete('/id', function (req, res) {
 });
 router.post('/', function (req, res) {
     Carops.CartOperationRepo.getOperation(req.body.id, function (err, row) {
-        if (Array.isArray(row) && row.length > 1) {
+        if (Array.isArray(row) && row.length > 0) {
             try {
-                carop = new Carops.CartOperation(null, req.body.idCart, null, null, null, new Date(), null);
-                Carops.CartOperationRepo.createOperation(carop, function (err, row) {
+                var caropitem = new Carops.CartOperation(row[0].idCart_Operations, row[0].idCart, row[0].Item_Total, row[0].Tax, row[0].Discount, row[0].Date, row[0].Total);
+                caropitem.ItemTotal = req.body.ItemTotal;
+                caropitem.Tax = req.body.Tax;
+                caropitem.Discount = req.body.Discount;
+                caropitem.Total = req.body.Total;
+            } catch (e) {
+                throw e;
+            }
+            
+            try {
+                Carops.CartOperationRepo.updateOperation(caropitem, function (err, row) {
                     if (err) {
                         res.send(err);
                     }
@@ -49,15 +58,12 @@ router.post('/', function (req, res) {
             } catch (e) {
                 throw e;
             }
+           
         }
         else {
-            caropitem = new Carops.CartOperation(row.body.id, row.body.idCart, row.body.ItemTotal, row.body.Tax, row.body.Discount, row.body.Datem, row.body.Total);
-            caropitem.ItemTotal = req.body.ItemTotal;
-            caropitem.Tax = req.body.Tax;
-            caropitem.Discount = req.body.Discount;
-            caropitem.Total = req.body.Total;
-            try {
-                Carops.CartOperationRepo.updateOperation(caropitem, function (err, row) {
+             try {
+                var carop = new Carops.CartOperation(null, req.body.idCart, null, null, null, new Date(), null);
+                Carops.CartOperationRepo.createOperation(carop, function (err, row) {
                     if (err) {
                         res.send(err);
                     }

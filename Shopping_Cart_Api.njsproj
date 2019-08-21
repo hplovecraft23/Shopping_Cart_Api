@@ -31,6 +31,9 @@
   <ItemGroup>
     <Content Include="app.js" />
     <Content Include="dbconnection.js" />
+    <Content Include="model\Carop_Detail.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="model\Cart.js">
       <SubType>Code</SubType>
     </Content>
@@ -45,6 +48,9 @@
     <Content Include="public\stylesheets\main.css" />
     <Content Include="README.md" />
     <Content Include="routes\cartop.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="routes\codetail.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="routes\item.js">
