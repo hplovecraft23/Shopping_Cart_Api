@@ -10,7 +10,7 @@ var cors = require('cors');
 var cartops = require('./routes/cartop');
 var cart = require('./routes/cart');
 var item = require('./routes/item');
-var caropdetail = require('./model/Carop_Detail');
+var caropdetail = require('./routes/codetail');
 var app = express('./r');
 
 // view engine setup

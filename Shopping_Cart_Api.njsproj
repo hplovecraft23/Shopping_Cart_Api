@@ -31,6 +31,7 @@
   <ItemGroup>
     <Content Include="app.js" />
     <Content Include="dbconnection.js" />
+    <Content Include="loaderio-88bf495f9a91755c48c607e5e585bd4f.txt" />
     <Content Include="model\Carop_Detail.js">
       <SubType>Code</SubType>
     </Content>
