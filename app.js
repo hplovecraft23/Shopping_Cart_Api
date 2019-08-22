@@ -12,6 +12,8 @@ var cart = require('./routes/cart');
 var item = require('./routes/item');
 var caropdetail = require('./routes/codetail');
 var app = express('./r');
+var caropstatus = require('./routes/caropstatus');
+var parameter = require('./routes/parameter');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -30,6 +32,9 @@ app.use('/cartop', cartops);
 app.use('/cart', cart);
 app.use('/item', item);
 app.use('/codetail', caropdetail);
+app.use('/caropstatus', caropstatus);
+app.use('/parameter', parameter);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

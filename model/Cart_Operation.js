@@ -1,7 +1,7 @@
 ﻿var db = require('../dbconnection');
 
 class CartOperation {
-    constructor(id, idCart, ItemTotal, Tax, Discount, Date, Total) {
+    constructor(id, idCart, ItemTotal, Tax, Discount, Date, Total, Status, Expires) {
         this.id = id;
         this.idCart = idCart;
         this.ItemTotal = ItemTotal;
@@ -9,6 +9,8 @@ class CartOperation {
         this.Discount = Discount;
         this.Date = Date;
         this.Total = Total;
+        this.Status = Status;
+        this.Expires = Expires;
     }
 }
 let CartOperationRepo = {
@@ -19,10 +21,10 @@ let CartOperationRepo = {
         return db.query("SELECT * FROM Cart_Operations where idCart_Operations = ?;", [id], callback);
     },
     createOperation: function (CartOperation, callback) {
-        return db.query("INSERT INTO Cart_Operations (idCart_Operations, idCart, Item_Total, Tax, Discount, Date, Total) VALUES (?, ?, ?, ?, ?, ?, ?);", [null, CartOperation.idCart, CartOperation.ItemTotal, CartOperation.Tax, CartOperation.Discount, CartOperation.Date, CartOperation.Total], callback);
+        return db.query("INSERT INTO Cart_Operations (idCart_Operations, idCart, Item_Total, Tax, Discount, Date, Total, Status_ID, Expiration_Date) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);", [null, CartOperation.idCart, CartOperation.ItemTotal, CartOperation.Tax, CartOperation.Discount, CartOperation.Date, CartOperation.Total, CartOperation.Status, CartOperation.Expires], callback);
     },
     updateOperation: function (CartOperation, callback) {
-        return db.query("UPDATE Cart_Operations SET idCart = ?, Item_Total = ?, Tax = ?, Discount = ?, Date = ?, Total = ? WHERE idCart_Operations = ?", [CartOperation.idCart, CartOperation.ItemTotal, CartOperation.Tax, CartOperation.Discount, CartOperation.Date, CartOperation.Total, CartOperation.id], callback);
+        return db.query("UPDATE Cart_Operations SET idCart = ?, Item_Total = ?, Tax = ?, Discount = ?, Date = ?, Total = ?, Status_ID = ?, Expiration_Date = ? WHERE idCart_Operations = ?", [CartOperation.idCart, CartOperation.ItemTotal, CartOperation.Tax, CartOperation.Discount, CartOperation.Date, CartOperation.Total, CartOperation.Status, CartOperation.Expires, CartOperation.id], callback);
     },
     deleteOperation: function (id, callback) {
         return db.query("DELETE FROM Cart_Operations where idCart_Operations = ?", [id], callback);

@@ -41,7 +41,16 @@
     <Content Include="model\Cart_Operation.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="model\Cart_Operation_Status.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="model\Item.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="model\Parameter.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="routes\caropstatus.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="routes\cart.js" />
@@ -55,6 +64,9 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="routes\item.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="routes\parameter.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="views\index.pug" />
