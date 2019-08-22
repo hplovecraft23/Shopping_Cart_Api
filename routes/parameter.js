@@ -29,7 +29,7 @@ router.delete('/:id', function (req, res) {
             res.send(err);
         }
         else {
-            res.send(rows);
+            res.sendStatus(200);
         }
     });
 });
@@ -41,7 +41,7 @@ router.post('/', function (req, res) {
     }
     
     Parameters.Parameter_repo.getParameter(Item.id, function (err, rows) {
-        if (Array.isArray(rows) && row.length > 0) {
+        if (Array.isArray(rows) && rows.length > 0) {
             Parameters.Parameter_repo.updateParameter(Item, function (err, rows) {
                 if (err) {
                     res.send(err);
@@ -52,7 +52,7 @@ router.post('/', function (req, res) {
             });
         }
         else {
-            Parameters.Parameter_repo.updateParameter(Item, function (err, rows) {
+            Parameters.Parameter_repo.createParameter(Item, function (err, rows) {
                 if (err) {
                     res.send(err);
                 }
