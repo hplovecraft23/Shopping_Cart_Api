@@ -35,7 +35,7 @@ router.delete('/:id', function (req, res) {
 });
 router.post('/', function (req, res) {
     try {
-        var Item = new Status.Cart_OP_Status(req.body.idCart_Operation_Status, req.body.Status_Name);
+        var Item = new Status.Cart_OP_Status(null, req.body.Status_Name);
     } catch (e) {
         res.sendStatus(400);
     }

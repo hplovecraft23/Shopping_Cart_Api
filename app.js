@@ -32,7 +32,7 @@ app.use('/cartop', cartops);
 app.use('/cart', cart);
 app.use('/item', item);
 app.use('/codetail', caropdetail);
-app.use('/caropstatus', caropstatus);
+app.use('/cartopstatus', caropstatus);
 app.use('/parameter', parameter);
 
 

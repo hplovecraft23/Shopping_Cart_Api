@@ -28,6 +28,9 @@ let CartOperationRepo = {
     },
     deleteOperation: function (id, callback) {
         return db.query("DELETE FROM Cart_Operations where idCart_Operations = ?", [id], callback);
+    },
+    getLastID: function (callback) {
+        return db.query("Select LAST_INSERT_ID()", callback);
     }
 };
 
