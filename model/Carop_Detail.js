@@ -11,7 +11,7 @@ let CaropDetailRepo = {
         return db.query('SELECT * FROM Cart_Operations_Detail;', callback);
     },
     GetCODetail: function (id, callback) {
-        return db.query('SELECT * FROM Cart_Operations_Detail where idCart_Operations_Detail = ?', [id], callback);
+        return db.query('SELECT * FROM Cart_Operations_Detail where Operation_ID = ?', [id], callback);
     },
     CreateCODetail: function (CaropDetail, callback) {
         return db.query('INSERT INTO Cart_Operations_Detail (idCart_Operations_Detail, Operation_ID, Item_idItem) VALUES (?, ?, ?)', [null, CaropDetail.idCartOp, CaropDetail.ItemID], callback);

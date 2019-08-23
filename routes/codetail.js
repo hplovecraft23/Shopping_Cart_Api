@@ -41,10 +41,10 @@ router.post('/', function (req, res) {
             }
             else {
                 if (Array.isArray(rows) && rows.length > 0) {
-                    var item = new codet.CaropDetail(req.body.id, req.body.IdCartOp, req.body.ItemId);
+                    var item = new codet.CaropDetail(null, req.body.Operation_ID, req.body.Item_idItem);
                     codet.CaropDetailRepo.UpdateCODetail(item, function (err, rows) {
                         if (err) {
-                            send(err);
+                            res.send(err);
                         }
                         else {
                             res.sendStatus(200);
@@ -52,10 +52,10 @@ router.post('/', function (req, res) {
                     });
                 }
                 else {
-                    var newitem = new codet.CaropDetail(req.body.id, req.body.IdCartOp, req.body.ItemId);
+                    var newitem = new codet.CaropDetail(null, req.body.Operation_ID, req.body.Item_idItem);
                     codet.CaropDetailRepo.CreateCODetail(newitem, function (err, rows) {
                         if (err) {
-                            send(err);
+                            res.send(err);
                         }
                         else {
                             res.sendStatus(200);
