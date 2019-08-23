@@ -3,6 +3,11 @@ var express = require('express');
 var router = express.Router();
 var Status = require('../model/Cart_Operation_Status');
 
+class StatusIdResponse {
+    constructor(id) {
+        this.id = id;
+    }
+}
 router.get('/', function (req, res) {
     Status.Cart_Op_Status_Repo.getAllStatus(function (err, rows) {
         if (err) {
@@ -44,7 +49,7 @@ router.post('/', function (req, res) {
             res.send(err);
         }
         else {
-            res.sendStatus(200);
+            res.send(new StatusIdResponse(rows.insertId));
         }
     });
     

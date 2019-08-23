@@ -12,7 +12,7 @@ var cart = require('./routes/cart');
 var item = require('./routes/item');
 var caropdetail = require('./routes/codetail');
 var app = express('./r');
-var caropstatus = require('./routes/caropstatus');
+var cartopstatus = require('./routes/caropstatus');
 var parameter = require('./routes/parameter');
 
 // view engine setup
@@ -32,7 +32,7 @@ app.use('/cartop', cartops);
 app.use('/cart', cart);
 app.use('/item', item);
 app.use('/codetail', caropdetail);
-app.use('/cartopstatus', caropstatus);
+app.use('/cartopstatus', cartopstatus);
 app.use('/parameter', parameter);
 
 
