@@ -14,6 +14,7 @@ var caropdetail = require('./routes/codetail');
 var app = express('./r');
 var cartopstatus = require('./routes/caropstatus');
 var parameter = require('./routes/parameter');
+var loaderio = require('./routes/verifyloaderio');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -27,7 +28,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use('/loaderio-88bf495f9a91755c48c607e5e585bd4f', loaderio);
 app.use('/cartop', cartops);
 app.use('/cart', cart);
 app.use('/item', item);
